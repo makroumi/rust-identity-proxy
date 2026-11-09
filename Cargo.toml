@@ -47,6 +47,6 @@ anyhow = "1"
 uuid = { version = "1", features = ["v4"] }
 pin-project-lite = "0.2"
 clap = { version = "4", features = ["derive"] }
-rcgen = "0.13"
+rcgen = "0.14"
 proptest = "1"
 criterion = { version = "0.5", features = ["async_tokio"] }
