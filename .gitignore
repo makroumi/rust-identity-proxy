@@ -1,0 +1,3 @@
+/target/
+/config/certs/
+/crates/proxy-policy/proptest-regressions/

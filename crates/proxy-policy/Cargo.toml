@@ -1,0 +1,14 @@
+[package]
+name = "proxy-policy"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+proxy-core = { workspace = true }
+serde = { workspace = true }
+noyalib = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+proptest = { workspace = true }

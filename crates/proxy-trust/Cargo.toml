@@ -1,0 +1,16 @@
+[package]
+name = "proxy-trust"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+proxy-core = { workspace = true }
+proxy-tls = { workspace = true }
+rustls = { workspace = true }
+arc-swap = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+rcgen = { workspace = true }
+tempfile = "3"

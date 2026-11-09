@@ -1,0 +1,7 @@
+.git
+.github
+target
+**/target
+config/certs
+**/*.profraw
+**/*.profdata

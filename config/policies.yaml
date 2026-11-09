@@ -1,0 +1,36 @@
+# Identity-based access control policies.
+# Each rule maps an identity pattern to allowed method+path combinations.
+#
+# Identity patterns match against the certificate Subject CN or SPIFFE URI SAN.
+# Path patterns use segment-wise matching:
+#   /exact/path    - matches exactly
+#   /prefix/*      - matches one segment wildcard
+#   /prefix/**     - matches any number of segments
+#
+# Paths are normalized before matching to prevent traversal bypass.
+
+rules:
+  - identity: "spiffe://arkion.internal/agent/*"
+    allow:
+      - method: GET
+        path: "/api/v1/identity/**"
+      - method: POST
+        path: "/api/v1/credentials/short-lived"
+      - method: GET
+        path: "/api/v1/health"
+
+  - identity: "spiffe://arkion.internal/gateway/ai-gateway"
+    allow:
+      - method: "*"
+        path: "/api/v1/**"
+      - method: GET
+        path: "/api/v1/health"
+
+  - identity: "CN=monitoring"
+    allow:
+      - method: GET
+        path: "/api/v1/health"
+      - method: GET
+        path: "/api/v1/metrics"
+
+default_action: deny
