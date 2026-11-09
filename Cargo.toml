@@ -49,4 +49,4 @@ pin-project-lite = "0.2"
 clap = { version = "4", features = ["derive"] }
 rcgen = "0.13"
 proptest = "1"
-criterion = { version = "0.5", features = ["async_tokio"] }
+criterion = { version = "0.8", features = ["async_tokio"] }
